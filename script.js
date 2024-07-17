@@ -1,9 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const categories = {
-        ai: 'AI',
-        iot: 'IoT',
-        business: 'Business',
-        cybersecurity: 'Cybersecurity'
+        iot: 'IoT'
     };
 
     const mainContent = document.getElementById('main-content');
