@@ -48,16 +48,16 @@ nav ul li a:hover {
     font-size: 24px;  /* Larger font size */
     color: red;       /* Text colour red */
     text-decoration: none;
-    padding: 15px 25px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+    padding: 15px 25px; /* Increased padding */
+    background-color: #f9f9f9; /* Light background color for contrast */
+    border-radius: 5px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border */
     display: block;
-    text-align: center;
+    text-align: center; /* Center the text */
 }
 
 .mindmap a:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; /* Slightly darker background on hover */
 }
 
 #mindmap-content {
@@ -65,3 +65,4 @@ nav ul li a:hover {
     border-top: 1px solid #ccc;
     margin-top: 20px;
 }
+
