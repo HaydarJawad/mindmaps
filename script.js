@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mindmaps = document.querySelectorAll('.mindmaps');
     const mindmapContent = document.getElementById('mindmap-content');
 
+    // Show the correct mind maps based on the category selected
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Load the content of the selected mind map
     const mindmapLinks = document.querySelectorAll('.mindmap a');
     mindmapLinks.forEach(mindmapLink => {
         mindmapLink.addEventListener('click', (e) => {
