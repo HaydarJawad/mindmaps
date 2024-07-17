@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const category = link.getAttribute('data-category');
+            console.log(`Category clicked: ${category}`);
             mindmaps.forEach(map => {
                 if (map.id === category) {
                     map.style.display = 'flex';
@@ -25,13 +26,20 @@ document.addEventListener('DOMContentLoaded', () => {
         mindmapLink.addEventListener('click', (e) => {
             e.preventDefault();
             const file = mindmapLink.getAttribute('data-file');
+            console.log(`Mindmap file clicked: ${file}`);
             fetch(file)
-                .then(response => response.text())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
+                    }
+                    return response.text();
+                })
                 .then(data => {
                     mindmapContent.innerHTML = data;
                 })
                 .catch(error => {
-                    mindmapContent.innerHTML = `<p>Error loading mind map: ${error}</p>`;
+                    console.error(`Error loading mind map: ${error}`);
+                    mindmapContent.innerHTML = `<p>Error loading mind map: ${error.message}</p>`;
                 });
         });
     });
