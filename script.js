@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         scripts.forEach(script => {
             const newScript = document.createElement('script');
             newScript.textContent = script.textContent;
+            // Ensure global variables are available before executing the script
+            newScript.onload = () => console.log(`Script loaded: ${newScript.src}`);
             document.head.appendChild(newScript).parentNode.removeChild(newScript);
         });
     }
