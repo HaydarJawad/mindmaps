@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Load the content of the selected mind map
+    // Load the content of the selected mind map and update the URL
     const mindmapLinks = document.querySelectorAll('.mindmap a');
     mindmapLinks.forEach(mindmapLink => {
         mindmapLink.addEventListener('click', (e) => {
@@ -37,7 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 .then(data => {
                     console.log(`Fetched data: ${data}`);
                     mindmapContent.innerHTML = data;
+                    executeScripts(mindmapContent);
                     console.log(`Content loaded into mindmap-content div`);
+                    history.pushState(null, '', file);
                 })
                 .catch(error => {
                     console.error(`Error loading mind map: ${error}`);
@@ -45,4 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
         });
     });
+
+    function executeScripts(element) {
+        const scripts = element.querySelectorAll('script');
+        scripts.forEach(script => {
+            const newScript = document.createElement('script');
+            newScript.textContent = script.textContent;
+            document.head.appendChild(newScript).parentNode.removeChild(newScript);
+        });
+    }
 });
