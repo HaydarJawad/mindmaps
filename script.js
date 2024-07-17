@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const links = document.querySelectorAll('nav ul li a');
     const mindmaps = document.querySelectorAll('.mindmaps');
-    const mindmapContent = document.getElementById('mindmap-content');
 
     // Show the correct mind maps based on the category selected
     links.forEach(link => {
@@ -16,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     map.style.display = 'none';
                 }
             });
-            mindmapContent.innerHTML = '';
         });
     });
 
