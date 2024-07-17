@@ -35,7 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     return response.text();
                 })
                 .then(data => {
+                    console.log(`Fetched data: ${data}`);
                     mindmapContent.innerHTML = data;
+                    console.log(`Content loaded into mindmap-content div`);
                 })
                 .catch(error => {
                     console.error(`Error loading mind map: ${error}`);
