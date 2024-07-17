@@ -43,6 +43,23 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
+/* Additional styles for mind map links */
+.mindmap a {
+    font-size: 24px;  /* Larger font size */
+    color: red;       /* Text colour red */
+    text-decoration: none;
+    padding: 15px 25px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block;
+    text-align: center;
+}
+
+.mindmap a:hover {
+    background-color: #f0f0f0;
+}
+
 #mindmap-content {
     padding: 20px;
     border-top: 1px solid #ccc;
