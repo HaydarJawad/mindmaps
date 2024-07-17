@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const categories = {
-        iot: 'IoT'
-    };
-
+    const categories = ['ai', 'iot', 'business', 'cybersecurity'];
     const mainContent = document.getElementById('main-content');
     const mindmapContent = document.getElementById('mindmap-content');
     const links = document.querySelectorAll('nav ul li a');
@@ -39,6 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
                             loadMindMap(file);
                         });
                     }
+                })
+                .catch(error => {
+                    console.error(`Error checking file ${file}: ${error}`);
                 });
         }
 
