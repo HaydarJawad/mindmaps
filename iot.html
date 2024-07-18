@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/style.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@7.8.5/dist/d3.min.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.0/dist/browser/index.js"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.0/dist/index.js"></script>
+
+
+<script>
+  (() => {
+    setTimeout(() => {
+      const { markmap: O, mm: h } = window,
+        M = new O.Toolbar({
+          items: [
+            { type: 'zoomIn' },
+            { type: 'zoomOut' },
+            { type: 'fit' },
+            { type: 'fullscreen' }
+          ]
+        });
+      M.attach(h);
+      const re = M.render();
+      re.setAttribute("style", "position:absolute;bottom:20px;right:20px");
+      document.body.append(re);
+ 
+      // Remove "markmap" link and favicon
+      const toolbarItems = re.querySelectorAll('a, img');
+      toolbarItems.forEach(item => {
+        if (item.href?.includes('markmap') || item.src?.includes('favicon')) {
+          item.remove();
+        }
+      });
+    });
+  })();
+ </script>
+
+
+<script>((getMarkmap, getOptions, root2, jsonOptions) => {
+              const markmap = getMarkmap();
+              window.mm = markmap.Markmap.create(
+                "svg#mindmap",
+                (getOptions || markmap.deriveOptions)(jsonOptions),
+                root2
+              );
+            })(() => window.markmap,null,{"content":"<strong>Components of IoT Architecture</strong> <div style=\"text-align: center;\"> <small>Haydar jawad, 2024 </small><br><img src=\"favicon.svg\"></div>","children":[{"content":"Sensors and Actuators","children":[{"content":"Sensors","children":[{"content":"Temperature Sensors","children":[],"payload":{"lines":"11,12"}},{"content":"Humidity Sensors","children":[],"payload":{"lines":"12,13"}},{"content":"Light Sensors","children":[],"payload":{"lines":"13,14"}},{"content":"Motion Sensors","children":[],"payload":{"lines":"14,15"}},{"content":"Pressure Sensors","children":[],"payload":{"lines":"15,16"}},{"content":"Proximity Sensors","children":[],"payload":{"lines":"16,17"}},{"content":"Gas Sensors","children":[],"payload":{"lines":"17,18"}},{"content":"Infrared Sensors","children":[],"payload":{"lines":"18,19"}},{"content":"Ultrasonic Sensors","children":[],"payload":{"lines":"19,21"}}],"payload":{"lines":"10,21"}}],"payload":{"lines":"5,6"}},{"content":"Connectivity","children":[{"content":"Protocols","children":[{"content":"Wi-Fi","children":[],"payload":{"lines":"23,24"}},{"content":"Bluetooth","children":[],"payload":{"lines":"24,25"}},{"content":"Zigbee","children":[],"payload":{"lines":"25,26"}},{"content":"Z-Wave","children":[],"payload":{"lines":"26,27"}},{"content":"Cellular (3G, 4G, 5G)","children":[],"payload":{"lines":"27,28"}},{"content":"LoRaWAN","children":[],"payload":{"lines":"28,29"}},{"content":"NB-IoT (Narrowband IoT)","children":[],"payload":{"lines":"29,30"}},{"content":"Ethernet","children":[],"payload":{"lines":"30,31"}},{"content":"MQTT (Message Queuing Telemetry Transport)","children":[],"payload":{"lines":"31,32"}},{"content":"CoAP (Constrained Application Protocol)","children":[],"payload":{"lines":"32,33"}}],"payload":{"lines":"22,33"}},{"content":"Network Components","children":[{"content":"Routers","children":[],"payload":{"lines":"34,35"}},{"content":"Gateways","children":[],"payload":{"lines":"35,36"}},{"content":"Modems","children":[],"payload":{"lines":"36,37"}},{"content":"Network Hubs","children":[],"payload":{"lines":"37,39"}}],"payload":{"lines":"33,39"}}],"payload":{"lines":"21,22"}},{"content":"Edge Devices","children":[{"content":"Microcontrollers","children":[{"content":"Arduino","children":[],"payload":{"lines":"41,42"}},{"content":"ESP8266","children":[],"payload":{"lines":"42,43"}},{"content":"ESP32","children":[],"payload":{"lines":"43,44"}}],"payload":{"lines":"40,44"}},{"content":"Single-Board Computers","children":[{"content":"Raspberry Pi","children":[],"payload":{"lines":"45,46"}},{"content":"BeagleBone","children":[],"payload":{"lines":"46,47"}}],"payload":{"lines":"44,47"}},{"content":"Embedded Systems","children":[{"content":"Custom IoT Boards","children":[],"payload":{"lines":"48,50"}}],"payload":{"lines":"47,50"}}],"payload":{"lines":"39,40"}},{"content":"Data Processing","children":[{"content":"Edge Computing","children":[{"content":"Local Data Analysis","children":[],"payload":{"lines":"52,53"}},{"content":"Data Filtering","children":[],"payload":{"lines":"53,54"}},{"content":"Real-time Data Processing","children":[],"payload":{"lines":"54,55"}}],"payload":{"lines":"51,55"}},{"content":"Fog Computing","children":[{"content":"Near-Edge Processing","children":[],"payload":{"lines":"56,57"}},{"content":"Intermediate Data Storage","children":[],"payload":{"lines":"57,58"}}],"payload":{"lines":"55,58"}},{"content":"Cloud Computing","children":[{"content":"Data Storage","children":[],"payload":{"lines":"59,60"}},{"content":"Advanced Data Analytics","children":[],"payload":{"lines":"60,61"}},{"content":"Machine Learning","children":[],"payload":{"lines":"61,62"}},{"content":"Data Visualisation","children":[],"payload":{"lines":"62,63"}},{"content":"Big Data Processing","children":[],"payload":{"lines":"63,65"}}],"payload":{"lines":"58,65"}}],"payload":{"lines":"50,51"}},{"content":"Data Storage","children":[{"content":"Local Storage","children":[{"content":"SD Cards","children":[],"payload":{"lines":"67,68"}},{"content":"Local Databases","children":[],"payload":{"lines":"68,69"}}],"payload":{"lines":"66,69"}},{"content":"Cloud Storage","children":[{"content":"AWS (Amazon Web Services)","children":[],"payload":{"lines":"70,71"}},{"content":"Google Cloud Platform","children":[],"payload":{"lines":"71,72"}},{"content":"Microsoft Azure","children":[],"payload":{"lines":"72,73"}},{"content":"IBM Cloud","children":[],"payload":{"lines":"73,74"}},{"content":"Private Cloud Solutions","children":[],"payload":{"lines":"74,76"}}],"payload":{"lines":"69,76"}}],"payload":{"lines":"65,66"}},{"content":"User Interface","children":[{"content":"Mobile Applications","children":[{"content":"iOS Apps","children":[],"payload":{"lines":"78,79"}},{"content":"Android Apps","children":[],"payload":{"lines":"79,80"}}],"payload":{"lines":"77,80"}},{"content":"Web Applications","children":[{"content":"Dashboards","children":[],"payload":{"lines":"81,82"}},{"content":"Control Panels","children":[],"payload":{"lines":"82,83"}},{"content":"Monitoring Systems","children":[],"payload":{"lines":"83,84"}}],"payload":{"lines":"80,84"}},{"content":"Voice Assistants","children":[{"content":"Amazon Alexa","children":[],"payload":{"lines":"85,86"}},{"content":"Google Assistant","children":[],"payload":{"lines":"86,87"}},{"content":"Apple Siri","children":[],"payload":{"lines":"87,89"}}],"payload":{"lines":"84,89"}}],"payload":{"lines":"76,77"}},{"content":"Security","children":[{"content":"Device Security","children":[{"content":"Secure Boot","children":[],"payload":{"lines":"91,92"}},{"content":"Hardware Security Modules (HSM)","children":[],"payload":{"lines":"92,93"}}],"payload":{"lines":"90,93"}},{"content":"Network Security","children":[{"content":"VPN (Virtual Private Network)","children":[],"payload":{"lines":"94,95"}},{"content":"Firewalls","children":[],"payload":{"lines":"95,96"}},{"content":"Encryption Protocols (SSL/TLS)","children":[],"payload":{"lines":"96,97"}}],"payload":{"lines":"93,97"}},{"content":"Data Security","children":[{"content":"Encryption (at-rest and in-transit)","children":[],"payload":{"lines":"98,99"}},{"content":"Authentication Mechanisms","children":[],"payload":{"lines":"99,100"}},{"content":"Authorisation and Access Control","children":[],"payload":{"lines":"100,101"}}],"payload":{"lines":"97,101"}},{"content":"Application Security","children":[{"content":"Secure Coding Practices","children":[],"payload":{"lines":"102,103"}},{"content":"Regular Security Updates","children":[],"payload":{"lines":"103,104"}},{"content":"Vulnerability Management","children":[],"payload":{"lines":"104,106"}}],"payload":{"lines":"101,106"}}],"payload":{"lines":"89,90"}},{"content":"Management and Monitoring","children":[{"content":"Device Management","children":[{"content":"Provisioning","children":[],"payload":{"lines":"108,109"}},{"content":"Configuration","children":[],"payload":{"lines":"109,110"}},{"content":"Firmware Updates","children":[],"payload":{"lines":"110,111"}}],"payload":{"lines":"107,111"}},{"content":"Network Management","children":[{"content":"Network Traffic Analysis","children":[],"payload":{"lines":"112,113"}},{"content":"Network Health Monitoring","children":[],"payload":{"lines":"113,114"}}],"payload":{"lines":"111,114"}},{"content":"Performance Monitoring","children":[{"content":"Real-time Analytics","children":[],"payload":{"lines":"115,116"}},{"content":"Historical Data Analysis","children":[],"payload":{"lines":"116,117"}},{"content":"Alerts and Notifications","children":[],"payload":{"lines":"117,118"}}],"payload":{"lines":"114,118"}}],"payload":{"lines":"106,107"}}],"payload":{"lines":"0,1"}},{})</script>
+</body>
+</html>
